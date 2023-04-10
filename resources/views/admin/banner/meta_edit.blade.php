@@ -1,0 +1,198 @@
+@extends('layouts.admin_layout.admin_layout')
+
+@section('admin_css')
+<!-- DataTables -->
+<link rel="stylesheet" href="{{ url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+<!-- Select2 -->
+<link rel="stylesheet" href="{{ url('plugins/select2/css/select2.min.css') }}">
+<link rel="stylesheet" href="{{ url('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+<script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
+@endsection
+
+{{--  Slider Status start --}}
+@section('sidebar_status_Catalogue_open')
+menu-open
+@endsection
+@section('sidebar_status_Catalogues')
+active
+@endsection
+@section('sidebar_status_Blog')
+active
+@endsection
+{{--  Slider Status end --}}
+
+@section('content')
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">blog</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{ url('admin/blog') }}">Blog</a></li>
+              <li class="breadcrumb-item active">Edit Blog SEO</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+      @if (Session::has('success_message'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> {{ Session::get('success_message') }}.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+      @endif
+      @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    </div>
+    <!-- /.content-header -->
+    <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+
+                <section class="content">
+                    <div class="container-fluid">
+                      <!-- SELECT2 EXAMPLE -->
+                    <form action="{{ url('admin/meta-edit-blog-post') }}" method="POST">
+                        <input type="hidden" name="blog_id" value="{{ $blog_info->id }}">
+                        @csrf
+                        {{-- @method('PATCH') --}}
+                      <div class="card card-default card-primary">
+                        <div class="card-header">
+                          <h3 class="card-title">Edit {{ $blog_info->blog_name }} SEO</h3>
+
+                          <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                          </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                          <div class="row">
+
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <label for="meta_keywords">Meta Keywords</label>
+                                    <input type="text" class="form-control" id="meta_keywords" name="meta_keywords" placeholder="Enter Meta Keywords" value="{{ $blog_info->meta_keywords }}">
+                                  </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <label for="meta_title">Meta Title</label>
+                                    <input type="text" class="form-control" id="meta_title" name="meta_title" placeholder="Enter Meta Title" value="{{ $blog_info->meta_title }}">
+                                  </div>
+                            </div>
+
+                            <div class="col-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="meta_description">Meta Description</label>
+                                    <textarea name="meta_description" id="meta_description" class="form-control" rows="3" placeholder="Enter...">{{ $blog_info->meta_description }}</textarea>
+                                  </div>
+                            </div>
+
+                          </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                          <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                      <!-- /.card -->
+                    </div><!-- /.container-fluid -->
+                  </section>
+
+
+
+                <section class="content">
+                    <div class="container-fluid">
+                      <!-- SELECT2 EXAMPLE -->
+                    <form action="{{ url('admin/meta-edit-tag-post') }}" method="POST">
+                        <input type="hidden" name="blog_id" value="{{ $blog_info->id }}">
+                        @csrf
+
+                      <div class="card card-default card-primary">
+                        <div class="card-header">
+                          <h3 class="card-title">Edit {{ $blog_info->blog_name }} SEO</h3>
+
+                          <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                          </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                          <div class="row">
+
+
+                            </div>
+
+                          </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                          <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                      <!-- /.card -->
+                    </div><!-- /.container-fluid -->
+                  </section>
+
+              <!-- /.card -->
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+      </section>
+
+  </div>
+  <!-- /.content-wrapper -->
+  @endsection
+
+
+@section('admin_script')
+<!-- DataTables -->
+<script src="{{ url('plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ url('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ url('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ url('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+<!-- Select2 -->
+<script src="{{ url('plugins/select2/js/select2.full.min.js') }}"></script>
+{{-- sweetalert2 --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+<script>
+    $(function () {
+      $("#example1").DataTable({
+        "responsive": true,
+        "autoWidth": false,
+      });
+
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+    $('.tag-option').select2();
+});
+
+
+  </script>
+
+@endsection

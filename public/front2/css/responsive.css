@@ -1,0 +1,234 @@
+/* Large devices (laptops/desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    body {
+        background-color:#69fa50;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    body {
+        background-color:#cfe11f ;
+	}
+	
+	.product_full .product_img {
+		width: 60%;
+		height: 160px;
+	}
+
+	.sticky-nav.menu_fixed {
+		position: fixed;
+		padding: 40px 0 10px 0px !important;
+		box-shadow: 0 8px 6px -6px rgba(0,0,0,.4);
+
+	}
+	.menu_fix {
+		top: 3px !important;
+		left: 0px !important
+	}
+
+
+	#category_part .share_icon_middle {
+		position: absolute;
+		padding: 15% 20%;
+		font-size: 24px;
+	}
+
+	#header_contact_bar {
+		text-align: center;
+		padding-top: 5px !important;
+		padding-bottom: 5px !important;
+	}
+
+	#header_contact_bar img {
+		margin-bottom: 10px;
+
+	}
+	.col_sm {
+		margin-top: 10px;
+	}
+
+	.contact-map {
+		height: 420px !important;
+	}
+	
+}
+
+/* Small devices (landscape phones, 576px and up */
+@media only screen and (min-width: 575px) and (max-width: 767px) {
+    body {
+        background-color:#07b0a4 ;
+	}
+	
+
+	#category_part .share_icon_middle {
+		position: absolute;
+		padding: 15% 20%;
+		font-size: 24px;
+	}
+
+	#header_contact_bar {
+		text-align: center;
+		padding-top: 5px !important;
+		padding-bottom: 5px !important;
+	}
+
+	#header_contact_bar img {
+		margin-bottom: 10px;
+
+	}
+	.col_sm {
+		margin-top: 10px;
+	}
+	
+	.product_full .product_img {
+		width: 60%;
+		height: 140px;
+	}
+
+	.sticky-nav.menu_fixed {
+		position: fixed;
+		padding: 40px 0 10px 0px !important;
+		box-shadow: 0 8px 6px -6px rgba(0,0,0,.4);
+		top: 0;
+	}
+	.menu_fix {
+		top: 3px !important;
+		left: 0px !important
+	}
+	.contact-map {
+		height: 320px !important;
+	}
+
+
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 575px) {
+    body {
+        background-color:#4253cf ;
+	}
+
+	/* navbarDropdown */
+
+	#navbarDropdown {
+		text-align: right;
+	}
+	.contact-map {
+		height: 230px !important;
+	}
+
+	#serviceandrepair .servie_h2 {
+		font-size: 24px;
+	}
+
+	.footer_one ul li {
+		text-align: left;
+	}
+
+	#serviceandrepair {
+		text-align: center;
+	}
+	#serviceandrepair .servie_line {
+		margin-left: 12%;
+	}
+
+	.para_one {
+		text-align: left !important;
+	}
+
+	.para_header_responsive {
+		font-size: 12px !important;
+		text-align: left !important;
+	}
+
+	#header_contact_bar p {
+		margin: 0 !important;
+		margin-top: 5px !important;
+		font-size: 14px;
+	}
+
+	#category_part .share_icon_middle {
+		position: absolute;
+		padding: 15% 20%;
+		font-size: 24px;
+	}
+
+	.sticky-nav.menu_fixed {
+		position: fixed;
+		padding: 40px 0 10px 0px !important;
+		top: 0 !important;
+	}
+	.menu_fix {
+		top: 3px !important;
+		left: 0px !important
+	}
+
+
+	#header_contact_bar {
+		text-align: center;
+		padding-top: 5px !important;
+		padding-bottom: 5px !important;
+	}
+
+	#header_contact_bar img {
+		margin-bottom: 10px;
+
+	}
+	.col_sm {
+		margin-top: 10px;
+	}
+	
+	.product_full .product_img {
+		width: 60%;
+		height: 140px;
+	}
+
+
+    /*Footer*/
+	footer h3 {
+		padding-bottom: 10px;
+		padding-top: 30px;
+		text-align: center;
+	}
+	.footer_one,
+	.footer_one1 {
+		text-align: center;
+	}
+	.footer_two {
+		margin: 0 30px;
+	}
+	.footer_left {
+		text-align: center;
+	}
+	.footer_right {
+		text-align: center;
+	}
+	.four_body {
+		text-align: center;
+	}
+	.four_body ul {
+	text-align: left;
+	margin: 0px 30px;
+	}
+	.four_footer {
+		text-align: center;
+	}
+	.four_social {
+		text-align: center;
+	}
+	.four_footer h4 {
+		font-size: 16px;
+		padding-bottom: 10px;
+		padding-top: 20px;
+	}
+	.footer_footer h4 {
+		font-size: 12px;
+    }
+    
+} 
